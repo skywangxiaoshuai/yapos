@@ -129,7 +129,7 @@ end
 #     #production环境下挂载的图片目录
 #     command %{sudo mount -t nfs 192.168.0.9:/var/www/crm-api/public/system /var/www/crm-api/current/public/system}
 #   end
-end
+# end
 # For help in making your deploy script, see the Mina documentation:
 #
 #  - https://github.com/mina-deploy/mina/tree/master/docs
