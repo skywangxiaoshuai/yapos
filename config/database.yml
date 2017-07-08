@@ -36,12 +36,12 @@ staging:
 
 production:
   adapter: postgresql
-  host: 192.168.0.21
+  host: localhost
   port: 5432
   encoding: unicode
-  database: crm
+  database: yapos
   pool: 5
-  username: crm
-  password: 123456
+  username: yapos
+  password: Production2017
   prepared_statements: true
   statement_limit: 1000

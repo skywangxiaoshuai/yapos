@@ -10,8 +10,8 @@ task :staging do
 end
 
 task :production do
-  set :user, 'crm'
-  set :domain, '192.168.0.7'
+  set :user, 'yapos'
+  set :domain, 'api.yapos.net'
   set :rails_env, 'production'
 end
 
@@ -27,9 +27,9 @@ end
 # set :user, 'crm'
 # set :domain, '192.168.0.7'
 
-set :application_name, 'crm-api'
-set :deploy_to, '/var/www/crm-api'
-set :repository, 'git@gitlab.witspool.com:CRM/crm-api.git'
+set :application_name, 'yapos_api'
+set :deploy_to, '/var/www/yapos_api'
+set :repository, 'git@github.com:skywangxiaoshuai/yapos.git'
 set :branch, 'master'
 set :rvm_path, '/usr/local/rvm/bin/rvm'
 set :shared_paths, ['config/database.yml', 'log', 'public/system']
@@ -58,8 +58,8 @@ task :setup => :environment do
   command %[touch "#{fetch(:deploy_to)}/shared/config/database.yml"]
   command %[echo "-----> Be sure to edit '#{fetch(:deploy_to)}/shared/config/database.yml'."]
 
-  # 取消挂载的图片服务器
-  command %[sudo umount /var/www/crm-api/current/public/system]
+  # # 取消挂载的图片服务器
+  # command %[sudo umount /var/www/crm-api/current/public/system]
 
 
 end
@@ -121,14 +121,14 @@ namespace :db do
   end
 end
 
-namespace :mount do
-  task :start do
-    #staging环境下挂载的图片目录
-    # command %{sudo mount -t nfs 192.168.0.9:/var/www/development/public/system /var/www/crm-api/current/public/system}
-
-    #production环境下挂载的图片目录
-    command %{sudo mount -t nfs 192.168.0.9:/var/www/crm-api/public/system /var/www/crm-api/current/public/system}
-  end
+# namespace :mount do
+#   task :start do
+#     #staging环境下挂载的图片目录
+#     # command %{sudo mount -t nfs 192.168.0.9:/var/www/development/public/system /var/www/crm-api/current/public/system}
+#
+#     #production环境下挂载的图片目录
+#     command %{sudo mount -t nfs 192.168.0.9:/var/www/crm-api/public/system /var/www/crm-api/current/public/system}
+#   end
 end
 # For help in making your deploy script, see the Mina documentation:
 #
