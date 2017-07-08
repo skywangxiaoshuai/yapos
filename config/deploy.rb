@@ -85,7 +85,7 @@ task :deploy => :environment do  #执行 mina deploy 命令时执行的任务
         command %{touch tmp/restart.txt}
         # invoke :'sidekiq:restart'
         invoke :'mkdir:system'
-        invoke :'mount:start' #部署过程中自动挂载文件服务器
+        # invoke :'mount:start' #部署过程中自动挂载文件服务器
         invoke :'puma:stop'
         invoke :'puma:start'
       end
