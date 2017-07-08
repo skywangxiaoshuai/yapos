@@ -13,6 +13,7 @@ task :production do
   set :user, 'yapos'
   set :domain, 'api.yapos.net'
   set :rails_env, 'production'
+  set :port, '22003'
 end
 
 # 开发环境 部署时的服务器和用户
