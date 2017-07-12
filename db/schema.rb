@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708055658) do
+ActiveRecord::Schema.define(version: 20170712025520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,22 @@ ActiveRecord::Schema.define(version: 20170708055658) do
     t.string   "notify_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "pay_results", force: :cascade do |t|
+    t.string   "buyer_id"
+    t.string   "merchant_uid"
+    t.string   "alipay_shop_id"
+    t.string   "total_amount"
+    t.string   "receipt_amount"
+    t.string   "buyer_pay_amount"
+    t.string   "gmt_payment"
+    t.string   "trade_no"
+    t.string   "app_id"
+    t.string   "out_trade_no"
+    t.string   "voucher_id_list"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

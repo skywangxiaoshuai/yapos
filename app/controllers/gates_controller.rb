@@ -3,6 +3,7 @@ class GatesController < ApplicationController
   def show
     test = { 测试: "成功！" }
     render status: :ok, json: test
+    return "success"
   end
 
   def create
