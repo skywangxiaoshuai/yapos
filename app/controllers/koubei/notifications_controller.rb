@@ -5,8 +5,8 @@ class Koubei::NotificationsController < ApplicationController
   end
 
   def create
-    notifications = Koubei::Notification.new(notifications_params)
-    if notifications.save
+    notification = Koubei::Notification.new(notifications_params)
+    if notification.save
       render status: :ok
       return "success"
     end
